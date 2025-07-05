@@ -46,8 +46,8 @@ module vga_true_random (
     // clock for VGA is clk_25mHz
     always @(posedge clk_100mhz) begin
         clk_cnt <= clk_cnt + 1; // Increment counter
-        if (clk_cnt==0 ) begin // Period 4
-            clk_25mhz<= ~clk_25mhz;   // Toggle the 25MHz clock every 4 ticks          
+        if (clk_cnt==0 ) begin 
+            clk_25mhz<= ~clk_25mhz; // toggle every 2 ticks to achieve period 4 
         end
     end
 
